@@ -813,6 +813,12 @@ open class STPPaymentCardTextField: UIControl, UIKeyInput, STPFormTextFieldDeleg
         postalCodeField.isAccessibilityElement = false
         postalCodeField.keyboardType = .numbersAndPunctuation
         // Placeholder is set by country code setter
+    
+        // jbruhin
+        if Locale.autoupdatingCurrent.regionCode == "US" {
+            postalCodeField.keyboardType = .numberPad
+        }
+        
 
         fieldsView.clipsToBounds = true
         fieldsView.backgroundColor = UIColor.clear
